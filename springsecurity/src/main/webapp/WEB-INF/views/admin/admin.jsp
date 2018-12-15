@@ -23,6 +23,6 @@
 <body>
 	<h2>ADMIN PAGE</h2>
 	<h3>Session : <%=request.getSession().getId() %></h3>
-	<a href="/springecurity/index.jsp?logoff=yes"><button class="button">Log Off</button></a>
+	<a href="/springsecurity/index.jsp?logoff=yes"><button class="button">Log Off</button></a>
 </body>
 </html>

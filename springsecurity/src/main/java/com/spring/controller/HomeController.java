@@ -18,7 +18,12 @@ public class HomeController {
 	}
 
 	@RequestMapping(value = "/student", method = RequestMethod.GET)
-	public String student() {
+	public String student() {		
 		return "student/student";
+	}
+	
+	@RequestMapping(value = "/user", method = RequestMethod.GET)
+	public String user() {		
+		return "user/user";
 	}
 }
