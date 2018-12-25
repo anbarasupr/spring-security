@@ -1,4 +1,4 @@
-<%@ page session="false" trimDirectiveWhitespaces="true" %>
+<%@ page session="false" trimDirectiveWhitespaces="true"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -17,12 +17,10 @@
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>User</title>
+<title>SIGN IN</title>
 </head>
 <body>
-	<h2>USER PAGE</h2>
-	<h3>Session : <%=request.getSession().getId() %></h3>
-	<a href="/springsecurity/index.jsp?logoff=yes"><button class="button">Log Off</button></a>
-
+	<h2>SIGN IN PAGE</h2>
+	<%@ include file="logoff.jsp"%>
 </body>
 </html>

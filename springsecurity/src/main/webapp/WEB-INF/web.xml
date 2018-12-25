@@ -21,6 +21,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 
+	<!--  -->
 	<filter>
 		<filter-name>springSecurityFilterChain</filter-name>
 		<filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
@@ -35,7 +36,7 @@
 		<param-value>
 			/WEB-INF/spring-servlet.xml
 			/WEB-INF/spring-security.xml
-			/WEB-INF/spring-database.xml
+			/WEB-INF/spring-repository.xml
 		</param-value>
 	</context-param>
 </web-app>  
