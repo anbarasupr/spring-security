@@ -27,7 +27,7 @@ public class HomeController {
 	public String createAppointment() {		
 		return "create-appointment";
 	}
-	@RequestMapping(value = "/schedule-appointment", method = RequestMethod.GET)
+	@RequestMapping(value = "/schedule/appointment", method = RequestMethod.GET)
 	public String schedule() {		
 		return "schedule-appointment";
 	}

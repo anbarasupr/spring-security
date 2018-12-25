@@ -33,8 +33,8 @@
 	<%
 		if (request.getParameter("logoff") != null) {
 			session.invalidate();
-			//response.sendRedirect("index.jsp");
-			//return;
+			response.sendRedirect("/springsecurity/entry");
+			return;
 		}
 	%>
 
@@ -48,7 +48,7 @@
 	<a href="services"><button class="button">Services</button></a>
 	<a href="appointments"><button class="button button2">Appointments</button></a>
 	<a href="create-appointment"><button class="button button3">Create Appointment</button></a>
-	<a href="schedule-appointment"><button class="button button4">Schedule Appointment</button></a>
+	<a href="schedule/appointment"><button class="button button4">Schedule Appointment</button></a>
 	<a href="signin"><button class="button button5">Sign In</button></a>
 	<a href="signup"><button class="button button3">Sign Up</button></a>
 </div>
