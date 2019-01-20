@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:security="http://www.springframework.org/schema/security"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+	<security:http auto-config="true" use-expressions="false">
+		<security:form-login login-page="/login" login-processing-url="/login" 
+		username-parameter="custom_username" password-parameter="custom_password"
+		default-target-url="/view-appointments/"
+		always-use-default-target="true" 
+		authentication-failure-url="/login?error=true"
+		/>
+		<!--  always-use-default-target : when user login via /login url, if it is false, then it default goes to /appointments else it goes to the respective page, if it is true, then always go to /appointments irrespecive of the action clicked -->
+		<security:intercept-url pattern="/schedule/*" access="ROLE_ADMIN" />
+		<security:intercept-url pattern="/create-appointment" access="ROLE_USER" />		
+		<security:intercept-url pattern="/view-appointments" access="ROLE_USER,ROLE_ADMIN" />
+		<security:intercept-url pattern="/signin" access="ROLE_USER,ROLE_ADMIN" />		
+		<security:intercept-url pattern="/**" access="ROLE_ANONYMOUS,ROLE_USER,ROLE_ADMIN" />
+	</security:http>
+	
+<!-- ROLE_ANONYMOUS is default role in spring to who are not authenticated -->
+	<security:authentication-manager>
+		<security:authentication-provider>
+			<security:user-service>
+				<security:user name="admin" password="admin" authorities="ROLE_ADMIN" />
+				<security:user name="user" password="user" authorities="ROLE_USER" />
+			</security:user-service>
+			<security:password-encoder ref="encoder" />
+		</security:authentication-provider>
+	</security:authentication-manager>
+
+	<bean id="encoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder" factory-method="getInstance"/>
+
+</beans>

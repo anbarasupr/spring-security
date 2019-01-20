@@ -7,36 +7,32 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class HomeController {
 
-	@RequestMapping(value = { "/", "/entry" }, method = RequestMethod.GET)
-	public String start() {
-		return "entry";
-	}
-	@RequestMapping(value = "/home", method = RequestMethod.GET)
+	@RequestMapping(value = {"", "/", "/home" }, method = RequestMethod.GET)
 	public String home() {
-		return "home";
+		return "appt/home";
 	}
 	@RequestMapping(value = "/services", method = RequestMethod.GET)
 	public String services() {		
-		return "services";
+		return "appt/services";
 	}
-	@RequestMapping(value = "/appointments", method = RequestMethod.GET)
+	@RequestMapping(value = "/view-appointments", method = RequestMethod.GET)
 	public String appointments() {		
-		return "appointments";
+		return "appt/view-appointments";
 	}
 	@RequestMapping(value = "/create-appointment", method = RequestMethod.GET)
 	public String createAppointment() {		
-		return "create-appointment";
+		return "appt/create-appointment";
 	}
 	@RequestMapping(value = "/schedule/appointment", method = RequestMethod.GET)
 	public String schedule() {		
-		return "schedule-appointment";
+		return "appt/schedule-appointment";
 	}
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String signin() {		
 		return "signin";
 	}
-	@RequestMapping(value = "/signup", method = RequestMethod.GET)
-	public String signup() {		
-		return "signup";
+	@RequestMapping(value = "/register", method = RequestMethod.GET)
+	public String register() {		
+		return "register";
 	}
 }

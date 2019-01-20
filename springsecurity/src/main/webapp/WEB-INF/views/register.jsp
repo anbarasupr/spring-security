@@ -17,10 +17,10 @@
 }
 </style>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>SCHEDULE APPOINTMENT</title>
+<title>REGISTER</title>
 </head>
 <body>
-	<h2>SCHEDULE APPOINTMENT PAGE</h2>
-	<%@ include file="logoff.jsp"%>
+	<h2>REGISTER PAGE</h2>
+	<%@ include file="appt/logoff.jsp"%>
 </body>
 </html>

@@ -7,9 +7,9 @@
 
 	<security:http auto-config="true" use-expressions="false">
 		<security:intercept-url pattern="/schedule/*" access="ROLE_ADMIN" />
-		<security:intercept-url pattern="/create-appointment" access="ROLE_USER,ROLE_ADMIN" />		
-		<security:intercept-url pattern="/appointments" access="ROLE_USER,ROLE_ADMIN" />
-		<security:intercept-url pattern="/services" access="ROLE_USER,ROLE_ADMIN" />
+		<security:intercept-url pattern="/create-appointment" access="ROLE_USER" />		
+		<security:intercept-url pattern="/view-appointments" access="ROLE_USER,ROLE_ADMIN" />
+		<security:intercept-url pattern="/signin" access="ROLE_USER,ROLE_ADMIN" />		
 		<security:intercept-url pattern="/**" access="ROLE_ANONYMOUS,ROLE_USER,ROLE_ADMIN" />
 <!-- 		<security:http-basic/> -->
 	</security:http>

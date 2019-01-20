@@ -21,6 +21,6 @@
 </head>
 <body>
 	<h2>SIGN IN PAGE</h2>
-	<%@ include file="logoff.jsp"%>
+	<%@ include file="appt/logoff.jsp"%>
 </body>
 </html>
