@@ -1,0 +1,1 @@
+<a href="/springsecurity-post-login/home?logoff=yes"><button class="button">Log Off</button></a>
