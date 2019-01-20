@@ -3,7 +3,12 @@
 
 <html>
 <head>
-
+<script type="text/javascript">
+function logout(){
+	event.preventDefault();
+	document.getElementById('logout-form').submit();
+}
+</script>
 <style>
 .button {
 	background-color: #4CAF50; /* Green */
@@ -50,12 +55,18 @@
 		<c:choose>
 			<c:when test="${authenticated}">
 				<span class="text-uppercase font-weight-bold">Welcome <sec:authentication property="name"/> </span>
-				<a href="/springsecurity-post-login/register"><button class="button button3">Register</button></a>
+				<a href="#" id="logout" onclick="logout()"><button class="button button3">Logout</button></a>
+				<form id="logout-form" action="/springsecurity-post-login/logout" method="POST">
+					<sec:csrfInput/>
+				</form>
 			</c:when>
 			<c:otherwise>
 				<a href="/springsecurity-post-login/login"><button class="button button5">Sign in</button></a>
+						<a href="/springsecurity-post-login/register"><button class="button button3">Register</button></a>
+				
 			</c:otherwise>
 		</c:choose>
+		
 	</div>
 </body>
 </html>
