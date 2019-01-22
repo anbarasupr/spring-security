@@ -62,8 +62,7 @@ function logout(){
 			</c:when>
 			<c:otherwise>
 				<a href="/springsecurity-post-login/login"><button class="button button5">Sign in</button></a>
-						<a href="/springsecurity-post-login/register"><button class="button button3">Register</button></a>
-				
+				<a href="/springsecurity-post-login/register"><button class="button button3">Register</button></a>
 			</c:otherwise>
 		</c:choose>
 		
