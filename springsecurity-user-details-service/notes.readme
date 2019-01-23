@@ -1,0 +1,15 @@
+contextConfigLocation is the context parameter where we provide the spring security beans configuration file name. It is used by ContextLoaderListener to configure authentication in our application.
+
+We have also added HttpSessionEventPublisher listener to publish session created/destroyed events to the Spring Root WebApplicationContext.
+
+I am also setting session-timeout to 15 minutes, this is used for auto timeout when user is inactive for 15 minutes.
+
+DelegatingFilterProxy is the application filter defined, it is used for intercepting the HTTP requests and performing authentication related tasks.
+
+DispatcherServlet servlet is the front controller for the Spring MVC application
+
+
+
+
+UserDetailsService
+If we want to use any DAO class for authentication, we need to implement UserDetailsService interface. Once the DAO is configured, it’s loadUserByUsername() is used to validate the user.
