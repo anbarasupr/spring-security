@@ -54,7 +54,9 @@ function logout(){
 		<sec:authorize access="authenticated" var="authenticated"/>
 		<c:choose>
 			<c:when test="${authenticated}">
-				<span class="text-uppercase font-weight-bold">Welcome <sec:authentication property="name"/> </span>
+				<span class="text-uppercase font-weight-bold">Welcome 
+				<sec:authentication property="principal.username"/> - 
+				<sec:authentication property="principal.authorities"/> </span>
 				<a href="#" id="logout" onclick="logout()"><button class="button button3">Logout</button></a>
 				<form id="logout-form" action="/springsecurity-user-details-service/logout" method="POST">
 					<sec:csrfInput/>

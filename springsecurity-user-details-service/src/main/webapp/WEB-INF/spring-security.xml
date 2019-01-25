@@ -18,7 +18,7 @@
 <!-- 		<security:session-management invalid-session-url="/login"> -->
 <!-- 			<security:concurrency-control max-sessions="1" expired-url="/login" /> -->
 <!-- 		</security:session-management> -->
-<!-- 		<security:access-denied-handler error-page="/denied"/> -->
+ 		<security:access-denied-handler error-page="/denied"/>
 		<!--  always-use-default-target : when user login via /login url, if it is false, then it default goes to /appointments else it goes to the respective page, if it is true, then always go to /appointments irrespecive of the action clicked -->
 		<security:logout  invalidate-session="true" logout-url="/logout" logout-success-url="/login?logout=true"></security:logout>
 		<security:intercept-url pattern="/schedule/*" access="ROLE_ADMIN" />
@@ -33,9 +33,16 @@
 	
 <!-- ROLE_ANONYMOUS is default role in spring to who are not authenticated -->
 	<security:authentication-manager>
-		<security:authentication-provider user-service-ref="customUserDetailsService">			
+	<security:authentication-provider>
+			<security:user-service>
+				<security:user name="admin" password="admin" authorities="ROLE_ADMIN" />
+				<security:user name="user" password="user" authorities="ROLE_USER" />
+			</security:user-service>
 			<security:password-encoder ref="encoder" />
 		</security:authentication-provider>
+		<security:authentication-provider user-service-ref="customUserDetailsService">			
+			<security:password-encoder ref="encoder" />
+		</security:authentication-provider>		
 	</security:authentication-manager>
 
 	<bean id="encoder" class="org.springframework.security.crypto.password.NoOpPasswordEncoder" factory-method="getInstance"/>
