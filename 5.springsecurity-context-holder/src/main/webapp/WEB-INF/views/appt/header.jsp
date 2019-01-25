@@ -37,7 +37,7 @@ function logout(){
 	background-color: #555555;
 } /* Black */
 </style>
-<link href="/springsecurity-user-details-service/resources/static/css/bootstrap.css" rel="stylesheet" type="text/css">
+<link href="/springsecurity-context-holder/resources/static/css/bootstrap.css" rel="stylesheet" type="text/css">
 
 </head>
 <body>
@@ -45,10 +45,10 @@ function logout(){
 		Session :
 		<%=request.getSession().getId()%></h3>
 	<div>
-		<a href="/springsecurity-user-details-service/services"><button class="button">Services</button></a>
-		<a href="/springsecurity-user-details-service/create-appointment"><button class="button button3">Create Appointment</button></a>
-		<a href="/springsecurity-user-details-service/view-appointments"><button class="button button2">View Appointments</button></a>
-		<a href="/springsecurity-user-details-service/schedule/appointment"><button class="button button4">Schedule Appointment</button></a>
+		<a href="/springsecurity-context-holder/services"><button class="button">Services</button></a>
+		<a href="/springsecurity-context-holder/create-appointment"><button class="button button3">Create Appointment</button></a>
+		<a href="/springsecurity-context-holder/view-appointments"><button class="button button2">View Appointments</button></a>
+		<a href="/springsecurity-context-holder/schedule/appointment"><button class="button button4">Schedule Appointment</button></a>
 		
 		<!-- show signin based user authentication - conditionally -->
 		<sec:authorize access="authenticated" var="authenticated"/>
@@ -58,13 +58,13 @@ function logout(){
 				<sec:authentication property="principal.username"/> - 
 				<sec:authentication property="principal.authorities"/> </span>
 				<a href="#" id="logout" onclick="logout()"><button class="button button3">Logout</button></a>
-				<form id="logout-form" action="/springsecurity-user-details-service/logout" method="POST">
+				<form id="logout-form" action="/springsecurity-context-holder/logout" method="POST">
 					<sec:csrfInput/>
 				</form>
 			</c:when>
 			<c:otherwise>
-				<a href="/springsecurity-user-details-service/login"><button class="button button5">Sign in</button></a>
-				<a href="/springsecurity-user-details-service/register"><button class="button button3">Register</button></a>
+				<a href="/springsecurity-context-holder/login"><button class="button button5">Sign in</button></a>
+				<a href="/springsecurity-context-holder/register"><button class="button button3">Register</button></a>
 			</c:otherwise>
 		</c:choose>
 		

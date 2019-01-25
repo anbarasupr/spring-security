@@ -13,7 +13,7 @@
 	<br>
 	<br>
 	<h3>Session : <%=request.getSession().getId() %></h3>
-	<form action="/springsecurity-user-details-service/login" method="POST">
+	<form action="/springsecurity-context-holder/login" method="POST">
 		Enter username :<input type="text" name="custom_username"> <br><br>
 		Enter password :<input type="password" name="custom_password"><br><br>
 		<sec:csrfInput/>

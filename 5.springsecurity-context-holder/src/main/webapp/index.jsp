@@ -4,5 +4,5 @@
 </head>
 <body>
 	<h2>INDEX PAGE LAUNCH</h2>
-	<a href="/springsecurity-user-details-service/home"><button class="btn-primary">HOME</button></a>
+	<a href="/springsecurity-context-holder/home"><button class="btn-primary">HOME</button></a>
 </html>

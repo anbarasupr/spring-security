@@ -6,7 +6,7 @@
 	<%
 		if (request.getParameter("logoff") != null) {
 			session.invalidate();
-			response.sendRedirect("/springsecurity-user-details-service/home");
+			response.sendRedirect("/springsecurity-context-holder/home");
 			return;
 		}
 	%>

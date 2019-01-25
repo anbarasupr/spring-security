@@ -3,10 +3,10 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.spring</groupId>
-	<artifactId>springsecurity-user-details-service</artifactId>
+	<artifactId>springsecurity-context-holder</artifactId>
 	<packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springsecurity-user-details-service Maven Webapp</name>
+	<name>springsecurity-context-holder Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
@@ -118,7 +118,7 @@
 
 	</dependencies>
 	<build>
-		<finalName>springsecurity-user-details-service</finalName>
+		<finalName>springsecurity-context-holder</finalName>
 		<plugins>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
